@@ -1,0 +1,111 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* reset body margin */
+body {
+  margin: 0;
+  font-family: "Tahoma";
+  background-color: #121213;
+}
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  color: white;
+  width: 100%;
+  border-bottom: solid 1px #3a3a3c;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 37px;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.game-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gameboard {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-rows: repeat(6, 1fr);
+  margin: 0 auto;
+  width: 350px;
+  height: 420px;
+}
+
+.game-row {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.tile {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  user-select: none;
+  color: white;
+}
+
+.tile[data-state="empty"] {
+  border: solid 2px #3a3a3c;
+}
+
+.tile[data-state="tbd"] {
+  border: solid 2px #565758;
+  background-color: #121213;
+}
+
+.tile[data-state="absent"] {
+  border: none;
+  background-color: #3a3a3c;
+}
+
+.tile[data-state="present"] {
+  border: none;
+  background-color: #b59f3b;
+}
+
+.tile[data-state="correct"] {
+  border: none;
+  background-color: #538d4e;
+}
+
+.message {
+  position: absolute;
+  top: 200px;
+  background-color: white;
+  color: #3a3a3c;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+}

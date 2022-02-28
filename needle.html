@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Needle</title>
+    <link rel="stylesheet" href="./app.css" />
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript" src="./words.js"></script>
+    <script type="text/babel" src="./components/game-tile.jsx"></script>
+    <script type="text/babel" src="./components/game-row.jsx"></script>
+    <script type="text/babel" src="./components/header.jsx"></script>
+    <script type="text/babel" src="./components/game.jsx"></script>
+    <script type="text/babel" src="./app.jsx"></script>
+    <script type="text/babel">
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
