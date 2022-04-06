@@ -132,6 +132,7 @@ function Game({ word }) {
   return (
     <div className="game-container">
       <div className="gameboard">{gameRows}</div>
+      <Keyboard setCurrKey={setCurrKey} />
       {message ? <div className="message">{message}</div> : null}
     </div>
   );
